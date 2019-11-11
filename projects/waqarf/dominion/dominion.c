@@ -792,7 +792,7 @@ int minionCardEffect(int handPos, int currentPlayer, int minionChoiceOne, int mi
       while(numHandCards(state) > 0)
       {
           discardCard(handPos, currentPlayer, state, 0);
-          return 0;
+  //  Breaking Bug Introduced      return 0;
       }
 
       //draw 4
@@ -806,7 +806,7 @@ int minionCardEffect(int handPos, int currentPlayer, int minionChoiceOne, int mi
       {
           if (i == currentPlayer)
           {
-              if ( state->handCount[i] > 4 )
+              if ( state->handCount[i] >= 4 )
               {
                   //discard hand
                   while( state->handCount[i] > 0 )
@@ -832,7 +832,7 @@ int ambassadorCardEffect(int ambassadorChoiceOne, int ambassadorChoiceTwo, int c
   int i;
   int j = 0;		//used to check if player has enough cards to discard
 
-  if (ambassadorChoiceTwo > 2 && ambassadorChoiceTwo < 0)
+  if (ambassadorChoiceTwo > 2 || ambassadorChoiceTwo < 0)
   {
       return -1;
   }
