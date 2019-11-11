@@ -806,7 +806,7 @@ int minionCardEffect(int handPos, int currentPlayer, int minionChoiceOne, int mi
       {
           if (i == currentPlayer)
           {
-              if ( state->handCount[i] >= 4 )
+              if ( state->handCount[i] >= 4 ) //readjusted due to introduced bug
               {
                   //discard hand
                   while( state->handCount[i] > 0 )

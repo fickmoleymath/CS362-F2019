@@ -89,7 +89,7 @@ int main(){
 	ambassadorAssert(testState.supplyCount[1], 0);
 	ambassadorAssert(testState.handCount[0], 6);
 
-printf(">>>> UNIT TESTING COMPLETED <<<< \n\n");
+	printf(">>>> UNIT TESTING COMPLETED <<<< \n\n");
 
   return 0;
 }

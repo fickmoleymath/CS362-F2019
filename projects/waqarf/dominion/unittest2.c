@@ -55,13 +55,21 @@ int main(){
   testState.numActions = 0;
   testState.playedCardCount = 0;
 
+  printf(">>>> UNIT TESTING: MINION FUNCTION <<<< \n\n");
+
+  printf("Testing First Choice Case\n");
   functionResult = minionCardEffect(defaultHandPos, defaultCurrentPlayer, minionChoice1, minionChoice2, &testState);
+  minionAssert(testState.coins, 2);
 
   testState.coins = 0;
   minionChoice1 = 0;
   minionChoice2 = 1;
 
+  printf("Testing Second Choice Case\n");
   functionResult = minionCardEffect(defaultHandPos, defaultCurrentPlayer, minionChoice1, minionChoice2, &testState);
+  minionAssert(testState.handCount[1], 4);
+
+  printf(">>>> UNIT TESTING COMPLETED <<<< \n\n");
 
   return 0;
 }
